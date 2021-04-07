@@ -2,7 +2,6 @@
 Basta adicionar type="module" na tag script do HTML. Utilize a palavra chave export na frente do valor que deseja exportar (use default se for único). E import nome from arquivo.js para importar. */
 
 import ScrollSuave from "./modules/scroll-suave.js";
-import initScrollAnimation from "./modules/scroll-animacao.js";
 import initAccordion from "./modules/accordion.js";
 import initTab from "./modules/tab-menu.js";
 import initModal from "./modules/modal.js";
@@ -12,6 +11,7 @@ import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import initFecthAnimais from "./modules/fetch-animais.js";
 import initFecthBitcoin from "./modules/fetch-bitcoin.js";
+import initScrollAnimation from "./modules/scroll-animacao.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
