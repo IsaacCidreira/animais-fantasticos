@@ -1,20 +1,27 @@
 // -------------------------------------------------------------------INICIO DOS ACCORDIONS LIST
 
-export default function initAccordion() {
-  const accordionList = document.querySelectorAll(
-    '[data-accordion="suave"] dt'
-  );
-  if (accordionList.length) {
-    const activeClass = "ativo";
-    accordionList[0].classList.add(activeClass);
-    accordionList[0].nextElementSibling.classList.add(activeClass);
-    function activeAccordion(e) {
-      this.classList.toggle(activeClass);
-      this.nextElementSibling.classList.toggle(activeClass);
-    }
-    accordionList.forEach((element) => {
-      element.addEventListener("click", activeAccordion);
+export default class Accordion {
+  constructor(list) {
+    this.accordionList = document.querySelectorAll(list);
+    this.activeClass = "ativo";
+  }
+
+  activeAccordion(element) {
+    element.classList.toggle(this.activeClass);
+    element.nextElementSibling.classList.toggle(this.activeClass);
+  }
+
+  addAccordionEvent() {
+    this.accordionList.forEach((element) => {
+      element.addEventListener("click", () => this.activeAccordion(element));
     });
+  }
+
+  init() {
+    if (this.accordionList.length) {
+      this.activeAccordion(this.accordionList[0]);
+      this.addAccordionEvent();
+    }
   }
 }
 
