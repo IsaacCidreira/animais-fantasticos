@@ -1,24 +1,30 @@
 //-------------------------------------------------------------------INICIO DOS TABS MENUS
-export default function initTab() {
-  const imgSelect = document.querySelectorAll('[data-tab="menu"] li');
-  const sectionSeelect = document.querySelectorAll(
-    '[data-tab="content"] section'
-  );
-  if (imgSelect.length && sectionSeelect.length) {
-    sectionSeelect[0].classList.add("ativo");
-    function activeTab(index) {
-      sectionSeelect.forEach((element) => {
-        element.classList.remove("ativo");
-      });
-      const direcao = sectionSeelect[index].dataset.anime;
-      sectionSeelect[index].classList.add("ativo", direcao);
-    }
+export default class TabNav {
+  constructor(menu, section) {
+    this.imgSelect = document.querySelectorAll(menu);
+    this.sectionSeelect = document.querySelectorAll(section);
+    this.activeClass = "ativo";
+  }
 
-    imgSelect.forEach((element, index) => {
-      element.addEventListener("click", () => {
-        activeTab(index);
-      });
+  activeTab(index) {
+    this.sectionSeelect.forEach((element) => {
+      element.classList.remove(this.activeClass);
     });
+    const direcao = this.sectionSeelect[index].dataset.anime;
+    this.sectionSeelect[index].classList.add(this.activeClass, direcao);
+  }
+
+  addTabNavEvent() {
+    this.imgSelect.forEach((element, index) => {
+      element.addEventListener("click", () => this.activeTab(index));
+    });
+  }
+  init() {
+    /* this.sectionSeelect[0].classList.add( this.activeClass); */
+    if (this.activeTab.length && this.sectionSeelect.length) {
+      this.addTabNavEvent();
+      this.activeTab(0);
+    }
   }
 }
 //---------------------------------------------------------------------FIM DOS TABS MENUS

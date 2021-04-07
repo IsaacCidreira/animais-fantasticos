@@ -3,7 +3,7 @@ Basta adicionar type="module" na tag script do HTML. Utilize a palavra chave exp
 
 import ScrollSuave from "./modules/scroll-suave.js";
 import Accordion from "./modules/accordion.js";
-import initTab from "./modules/tab-menu.js";
+import TabNav from "./modules/tab-menu.js";
 import initModal from "./modules/modal.js";
 import initTooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown.js";
@@ -15,11 +15,17 @@ import initScrollAnimation from "./modules/scroll-animacao.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
 scrollSuave.init();
+
 const accordion = new Accordion('[data-accordion="suave"] dt');
 accordion.init();
 
+const tabNav = new TabNav(
+  '[data-tab="menu"] li',
+  '[data-tab="content"] section'
+);
+tabNav.init();
+
 initScrollAnimation();
-initTab();
 initModal();
 initTooltip();
 initDropDownMenu();
