@@ -9,7 +9,7 @@ import Tooltip from "./modules/tooltip.js";
 import initDropDownMenu from "./modules/dropdown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
-import initFecthAnimais from "./modules/fetch-animais.js";
+import FecthAnimais from "./modules/fetch-animais.js";
 import initFecthBitcoin from "./modules/fetch-bitcoin.js";
 import initScrollAnimation from "./modules/scroll-animacao.js";
 
@@ -39,7 +39,7 @@ initScrollAnimation();
 initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
-initFecthAnimais();
+FecthAnimais("../../animais.json", ".numeros-grid");
 initFecthBitcoin();
 
 /* NAMED EXPORTS
