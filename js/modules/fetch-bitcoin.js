@@ -1,10 +1,11 @@
 // -------------------------------------------------------------------INICIO DOS ACCORDIONS LIST
 
-export default function initFecthBitcoin() {
-  fetch("https://blockchain.info/ticker")
+export default function fecthBitcoin(url, target) {
+  fetch(url)
     .then((response) => response.json())
     .then((json) => {
-      const btcPreco = document.querySelector(".btc-preco");
+      const btcPreco = document.querySelector(target);
+
       btcPreco.innerText = (1000 / json.BRL.sell).toFixed(4);
     })
     .catch((erro) => {
