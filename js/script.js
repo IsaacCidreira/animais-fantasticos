@@ -10,7 +10,7 @@ import initDropDownMenu from "./modules/dropdown.js";
 import initMenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import FecthAnimais from "./modules/fetch-animais.js";
-import initFecthBitcoin from "./modules/fetch-bitcoin.js";
+import fecthBitcoin from "./modules/fetch-bitcoin.js";
 import ScrollAnima from "./modules/scroll-anima.js";
 
 const scrollSuave = new ScrollSuave('[data-menu="suave"] a[href^="#"]');
@@ -42,7 +42,7 @@ initDropDownMenu();
 initMenuMobile();
 initFuncionamento();
 FecthAnimais("../../animais.json", ".numeros-grid");
-initFecthBitcoin();
+fecthBitcoin("https://blockchain.info/ticker", ".btc-preco");
 
 /* NAMED EXPORTS
 Você pode exportar mais de um valor. Quando for importar utilize as chaves para especificar cada valor. O nome importado deve ser igual ao exportado. */
