@@ -6,7 +6,7 @@ import Accordion from "./modules/accordion.js";
 import TabNav from "./modules/tab-menu.js";
 import Modal from "./modules/modal.js";
 import Tooltip from "./modules/tooltip.js";
-import initMenuMobile from "./modules/menu-mobile.js";
+import MenuMobile from "./modules/menu-mobile.js";
 import initFuncionamento from "./modules/funcionamento.js";
 import FecthAnimais from "./modules/fetch-animais.js";
 import fecthBitcoin from "./modules/fetch-bitcoin.js";
@@ -41,7 +41,9 @@ scrollAnima.init();
 const dropdownMenu = new DropdownMenu("[data-dropdown]");
 dropdownMenu.init();
 
-initMenuMobile();
+const menuMobile = new MenuMobile('[data-menu="button"]', '[data-menu="list"]');
+menuMobile.init();
+
 initFuncionamento();
 FecthAnimais("../../animais.json", ".numeros-grid");
 fecthBitcoin("https://blockchain.info/ticker", ".btc-preco");
